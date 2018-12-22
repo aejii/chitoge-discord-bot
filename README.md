@@ -11,5 +11,7 @@ var token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 module.exports = token;
 
 
-pour démarrer votre bot il vous suffit de faire:
+pour démarrer votre bot il vous suffit de faire (dans une console powershell/cmd):
+npm install
+puis
 node chitoge.js
