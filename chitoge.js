@@ -235,9 +235,9 @@ mais bon entre nous même si tu est timide personne ne t'en voudra si tu fait ${
 }
 
 try {
-  
+  var guild = null;
   bot.login(token).then(token => {
-    
+    guild = bot.guilds.first();
   }).catch((e) => {
     Utils.log(e, true);
   })
