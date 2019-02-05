@@ -32,6 +32,13 @@ setInterval(function(){
   changerJeux();
 },1000*10);
 
+function startColors() {
+  setInterval(function(){
+    var chitogue = guild.roles.find("name", "Best Waifu");
+    chitogue.setColor(Math.floor(Math.random()*16777215).toString(16));
+  },1000);
+}
+
 try {
   bot.on('ready', function () {
     Utils.log(Utils.Color.FgGreen + 'bot started');
@@ -238,6 +245,7 @@ try {
   var guild = null;
   bot.login(token).then(token => {
     guild = bot.guilds.first();
+    startColors() ;
   }).catch((e) => {
     Utils.log(e, true);
   })
