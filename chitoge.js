@@ -13,11 +13,15 @@ globalConst.init();
 var pingCommand = require('./commandes/ping');
 var configCommands = require('./commandes/config');
 var ipCommands = require('./commandes/ip');
+var musicCommands = require('./commandes/music');
+var leaveCommands = require('./commandes/leave');
 
 var commands = {
   config: configCommands,
   ping: pingCommand,
-  ip: ipCommands
+  ip: ipCommands,
+  play: musicCommands,
+  leave: leaveCommands
 }
 
 var listejeu = ["Tsundere","Zawse in Love","False love","Nisekoi","Cache cache avec les yakuza","Juliette dans une piece de théatre","Être la best waifu"];
@@ -28,15 +32,15 @@ function changerJeux() {
 }
 
 setInterval(function(){
-  Utils.log(`actu jeux${Utils.Color.FgYellow}${Utils.Color.Reset}`);
-  changerJeux();
+  //Utils.log(`actu jeux${Utils.Color.FgYellow}${Utils.Color.Reset}`);
+  //changerJeux();
 },1000*10);
 
 function startColors() {
   setInterval(function(){
-    var chitogue = guild.roles.find("name", "Best Waifu");
-    chitogue.setColor(Math.floor(Math.random()*16777215).toString(16));
-  },1000);
+    //var chitogue = guild.roles.find("name", "Best Waifu");
+    //chitogue.setColor(Math.floor(Math.random()*16777215).toString(16));
+  },1000*5);
 }
 
 try {
