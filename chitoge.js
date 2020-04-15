@@ -57,7 +57,7 @@ j'espere qu'on va bien s'entendre <3`).then((message) => {});
         try {//hop la
           if(args[0] === 'say'){
             const channelToSpeak = bot.channels.resolve(args[1])
-            channelToSpeak.send(args[2])
+            channelToSpeak.send(message.content.replace('say ','').replace(args[1]+' ',''))
           }else{
             message.channel.send('slt bg')
           }
