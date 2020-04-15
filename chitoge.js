@@ -51,7 +51,11 @@ j'espere qu'on va bien s'entendre <3`).then((message) => {});
       }
 
       if (message.channel.constructor.name === 'DMChannel') {
-        console.log('', false, 'DM message', message.author.username, message.content);
+        console.log('DM message')
+        //TODO
+        //detect when start by 'say guildID channelID message'
+        //then fetch guildID then channelID then send msg
+
         /*var result = /^say ([0-9]+) (.+)$/.exec(message.content);
         if (result) {
           if (!guild.members.get(message.author.id).hasPermission("MANAGE_GUILD")) {
