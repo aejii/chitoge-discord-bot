@@ -1,5 +1,5 @@
 {
-  "name": "chitogeBot",
+  "name": "chitogebot",
   "version": "1.0.0",
   "description": "",
   "main": "chitoge.js",
@@ -9,12 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.3.2",
+    "discord.js": "^12.1.1",
     "external-ip": "^2.1.1",
-    "ffmpeg-binaries": "^4.0.0",
     "moment": "^2.20.1",
-    "opusscript": "0.0.6",
-    "request": "^2.88.0",
-    "ytdl-core": "^0.29.1"
+    "request": "^2.88.0"
   }
 }
