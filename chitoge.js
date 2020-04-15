@@ -23,9 +23,10 @@ setInterval(function () {
 
 function startColors() {
   setInterval(function () {
-    var chitogue = guild.roles.find("name", "Best Waifu");
-    chitogue.setColor(Math.floor(Math.random() * 16777215).toString(16));
-  }, 1000 * 5)
+    const guild = bot.guilds.resolve("494514173741629451")
+    const botRole = guild.roles.resolve("524270192419930113")
+    botRole.setColor(Math.floor(Math.random() * 16777215).toString(16));
+  }, 1000 * 2)
 }
 
 bot.on('ready', function () {
@@ -100,12 +101,12 @@ j'espere qu'on va bien s'entendre <3`).then((message) => {});
         }
         return;
       } else if (/^\*suicide( |$)/i.exec(message.content)) { //https://giphy.com/gifs/season-9-episode-15-bravo-xUA7b4ALChx9x5kJ8c
-        var embed = new Discord.RichEmbed({});
+        /*var embed = new Discord.RichEmbed({});
         embed.setColor(0x00AFFF);
         embed.setImage("https://cdn.discordapp.com/attachments/327039523156656128/451056132182769675/giphy.gif");
-        return message.channel.send("", embed);
+        return message.channel.send("", embed);*/
       } else {
-        var regex = /^(?:\*([^\*]*)\*)|^(?:\*([^ ]+))/;
+        /*var regex = /^(?:\*([^\*]*)\*)|^(?:\*([^ ]+))/;
         var result = regex.exec(message.content);
         if (result) {
           var word = result[1] ? result[1] : result[2];
@@ -133,7 +134,7 @@ j'espere qu'on va bien s'entendre <3`).then((message) => {});
             });
 
           });
-        }
+        }*/
       }
     } catch (e) {
       console.error(e.stack, true)
@@ -146,7 +147,7 @@ j'espere qu'on va bien s'entendre <3`).then((message) => {});
 
 try {
   bot.login(token).then(token => {
-    //startColors();
+    startColors()
     //get channel by id: bot.channels.resolve("579383391338758145")
     //get guilds by id: bot.guilds.resolve("234262067652198400")
   }).catch((e) => {
