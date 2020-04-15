@@ -52,24 +52,18 @@ j'espere qu'on va bien s'entendre <3`).then((message) => {});
 
       if (message.channel.constructor.name === 'DMChannel') {
         console.log('DM message')
-        //TODO
-        //detect when start by 'say guildID channelID message'
-        //then fetch guildID then channelID then send msg
-
-        /*var result = /^say ([0-9]+) (.+)$/.exec(message.content);
-        if (result) {
-          if (!guild.members.get(message.author.id).hasPermission("MANAGE_GUILD")) {
-            Utils.reply(message, 'ptdr t ki ?', true);
-            return;
+        var args = message.content.split(" ")
+        try {//hop la
+          if(args[0] === 'say'){
+            const channelToSpeak = bot.channels.resolve(args[1])
+            channelToSpeak.send(args[2])
+          }else{
+            message.channel.send('slt bg')
           }
-          var channel = guild.channels.get(result[1]);
-          if (!channel) {
-            Utils.reply(message, 'c\'est pas un channel ça', true);
-            return;
-          }
-          channel.send(result[2]);
-        }*/
-        return;
+        } catch (error) {
+          //not important
+        }
+        return
       }
 
       if (message.content.substring(0, 1) === '!') {
@@ -153,6 +147,8 @@ j'espere qu'on va bien s'entendre <3`).then((message) => {});
 try {
   bot.login(token).then(token => {
     //startColors();
+    //get channel by id: bot.channels.resolve("579383391338758145")
+    //get guilds by id: bot.guilds.resolve("234262067652198400")
   }).catch((e) => {
     console.error(e, true);
   })
